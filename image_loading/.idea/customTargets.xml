@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CLionExternalBuildManager">
+    <target id="dd482d94-192a-4f83-8664-b508440b025d" name="build_release" projectName="image_loading">
+      <configuration id="8a6c81fd-21a3-4a12-968b-acb4e0a9c14a" name="build_release">
+        <build type="TOOL">
+          <tool actionId="Tool_External Tools_build_release" />
+        </build>
+        <clean type="TOOL">
+          <tool actionId="Tool_External Tools_clean_release" />
+        </clean>
+      </configuration>
+    </target>
+    <target id="1db69865-8bd5-43f8-8db1-6d56fba4aaf8" name="build_debug" projectName="image_loading">
+      <configuration id="e4319104-8766-44aa-a5b2-d63c030c65ba" name="build_debug">
+        <build type="TOOL">
+          <tool actionId="Tool_External Tools_build_debug" />
+        </build>
+        <clean type="TOOL">
+          <tool actionId="Tool_External Tools_clean_debug" />
+        </clean>
+      </configuration>
+    </target>
+  </component>
+</project>
