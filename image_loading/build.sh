@@ -45,11 +45,12 @@ LIBRARY_OUTPUT_DIRECTORY="$ROOT_DIR/shared_libs"
 
 C_FLAGS="$C_FLAGS $DEFAULT_C_FLAGS"
 
-ADD_SUBDIRECTORY "raylib/src"
-ADD_SUBDIRECTORY "utils"
+ADD_SUBDIRECTORY "src/raylib/src"
+ADD_SUBDIRECTORY "src/utils"
     
-COMPILE_EXECUTABLE "image_loader" "main.c plugin_utils.c" "" "raylib utils" "OpenGL GLX GLU pthread X11 rt dl m" "$EXTRA_LIB_PATH $LIBRARY_OUTPUT_DIRECTORY"
+COMPILE_EXECUTABLE "image_loader" "src/main.c src/plugin_config.c" "src/plugin_config.h" "raylib utils" "OpenGL GLX GLU pthread X11 rt dl m" "$EXTRA_LIB_PATH $LIBRARY_OUTPUT_DIRECTORY"
 
 
 LIBRARY_OUTPUT_DIRECTORY="$ROOT_DIR/plugins"
-ADD_SUBDIRECTORY "plugins_src/"
+ADD_SUBDIRECTORY "src/plugins/"
+
