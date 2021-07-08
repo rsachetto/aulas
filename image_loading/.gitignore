@@ -114,7 +114,14 @@ raylib/src/external/glfw/src/CMakeLists.txt
 raylib/src/external/glfw/src/glfw.rc.in
 */.*last_compiled_time_bbash
 
+bin/
+build_release/
+build_debug/
+plugins/
+
+
 .clangd/
 *.swp
 
 /bin/
+.ccls-cache

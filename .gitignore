@@ -1,2 +1,3 @@
 */.clangd/
 */.idea/
+.ccls-cache/
