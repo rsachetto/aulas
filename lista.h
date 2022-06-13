@@ -16,7 +16,7 @@ void * maybe_grow(void *list, u64 item_size);
 //INTERNALS MACROS
 #define __original_address__(__l) ( (char*)(__l) - sizeof(struct header) )
 #define __len__(__l) ( ((struct header *)(__original_address__(__l)))->size )
-#define __cap__(__l) ( ((struct header *)(__original_address__(__l)))->capacity )
+#define __cap__(__l) ( ((struct header* )(__original_address__(__l)))->capacity )
 #define __internal_len__(__l) ( ((struct header *)(__l))->size )
 #define __internal_cap__(__l) ( ((struct header *)(__l))->capacity )
 

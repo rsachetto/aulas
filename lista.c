@@ -3,31 +3,30 @@
 
 void * maybe_grow(void *list, u64 data_size_in_bytes) {
 
-    void *p;
     u64 m = 2;
 
     if(list == NULL) {
-        p = malloc(data_size_in_bytes * m + sizeof(struct header));
-        if(!p) return NULL;
-        __internal_len__(p) = 0;
+        list = malloc(data_size_in_bytes * m + sizeof(struct header));
+        if(!list) return NULL;
+        __internal_cap__(list) = m;
+        __internal_len__(list) = 0;
     }
     else {
 
-        u64 list_size = __internal_len__(p);
-        u64 cap = __internal_cap__(p);
-    
+        u64 list_size = __len__(list);
+        m = __cap__(list);
 
-        if ((__internal_len__(p) + 1) > cap) {
-            m = cap * 2;
-            p = realloc(__original_address__(list), data_size_in_bytes * m + sizeof(struct header));
-            if(!p) return NULL;
+        if ((list_size + 1) > m) {
+            m = m * 2;
+            list = realloc(__original_address__(list), data_size_in_bytes * m + sizeof(struct header));
+            if(!list) return NULL;
+            __internal_cap__(list) = m;
         }
-
-
+        else {
+            return list;
+        }
     }
-    
-    __internal_cap__(p) = m;
 
-    return p + sizeof(struct header);
+    return (char*) list + sizeof(struct header);
 }
 

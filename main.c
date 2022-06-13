@@ -11,36 +11,16 @@ void print_array(float *v, int v_size) {
         printf("%lf\n", v[i]);
 }
 
-typedef char* string;
-
-struct celula {
-    int a;
-    float b;
-};
-
-void add_in_list(float **l, float f) {
-    append(*l, f);
-}
-
-void *fp(void *a) {
-    printf("UUHUH\n");
-    return NULL;
-}
-
 int main() {
     
-    pthread_t t;
-
-
     float *v = NULL;
 
-    pthread_create(&t, NULL, fp, NULL);
-    add_in_list(&v, powf(3.0, 2.0));
-
-    pthread_join(t, NULL);
+    append(v, 1.0f);
+    append(v, 2.0f);
+    append(v, 3.0f);
+    append(v, 4.0f);
 
     print_array(v, arrlength(v));
 
-
-
+    arrfree(v);
 }
